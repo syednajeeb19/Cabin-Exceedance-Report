@@ -20,8 +20,8 @@ if upload_file is not None:
     st.write("Merged_data")
     st.dataframe(merged_data.head())
     
-    file1=clean_data.to_excel(index=False)
-    file2=merged_data.to_excel(index=False)
+    file1=clean_data.to_csv(index=False)
+    file2=merged_data.to_csv(index=False)
     
     st.download_button(label='Download_Clean_file',
                        data=file1,
