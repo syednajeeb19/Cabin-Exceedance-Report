@@ -10,7 +10,7 @@ from cleaning import data_cleaning
 
 st.title("CABIN EXCEEDANCE REPORT")
 
-upload_file=st.file_uploader("Choose a file to Upload",type="csv")
+upload_file=st.file_uploader("Choose a file to Upload",type="xlsx")
 
 if upload_file is not None:
     clean_data,merged_data=data_cleaning(upload_file)
@@ -20,8 +20,8 @@ if upload_file is not None:
     st.write("Merged_data")
     st.dataframe(merged_data.head())
     
-    file1=clean_data.to_csv(index=False)
-    file2=merged_data.to_csv(index=False)
+    file1=clean_data.to_excel(index=False)
+    file2=merged_data.to_excel(index=False)
     
     st.download_button(label='Download_Clean_file',
                        data=file1,
