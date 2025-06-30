@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 
 def data_cleaning(src_path):
-    df=pd.read_excel(src_path)
+    df=pd.read_csv(src_path)
     df.drop(columns = ['Reporting Time', 'Time Pattern', 'FT Exceedance\n(Single Event) \n(in HH:mm)\n        ','FDP Exceedance\n(Single Event)\n(in HH:mm)\n        '], inplace = True)
     df['Location Pattern'] = df['Location Pattern'].str.rstrip(' , ')
     df['Flight Number(s)'] = df['Flight Number(s)'].str.replace('/', ' ')
