@@ -10,7 +10,7 @@ from cleaning import data_cleaning
 
 st.title("CABIN EXCEEDANCE REPORT")
 
-upload_file=st.file_uploader("Choose a file to Upload",type="xlsx")
+upload_file=st.file_uploader("Choose a file to Upload",type="csv")
 
 if upload_file is not None:
     clean_data,merged_data=data_cleaning(upload_file)
